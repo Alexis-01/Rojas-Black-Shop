@@ -1,17 +1,17 @@
-import './App.css' ;
+import React from 'react'
+import NavBar from './components/NavBar/NavBar'
+import ItemListConteiner from './components/ItemListConteiner/ItemListConteiner'
+import './app.css'
 const App = () => {
   return (
-    <header>
-      <nav>
-      <h1 className='titulo'>Black-Shop</h1>
-        <ul>
-          <li>home</li>
-          <li>categoria</li>
-          <li>categoria</li>
-        </ul>
-      </nav>
-    </header>
+    <div className='app'>
+      <NavBar/>
+      <ItemListConteiner 
+      greeting='hola mundo'
+      />
+
+    </div>
   )
 }
 
-export default  App;
+export default App
