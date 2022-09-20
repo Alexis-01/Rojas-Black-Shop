@@ -1,7 +1,6 @@
 import React ,{useEffect,useState} from "react";
 import dataDB from "../../db/products"
-import customFetch from "./utils/promiseData"
-import Item from "../Item2/Item2";
+import Item from "../Item/Item";
 import "./itemsList.css"
 
 const data = dataDB
@@ -11,6 +10,16 @@ function ItemsList (){
     const [products, setProducts] = useState()
     const [showItems, setShowItems] = useState(false)
     
+    
+let customFetch = (data) => {
+    return new Promise((res,rej) => {
+        setTimeout(() => {
+            res(data)
+        } ,3000 )
+    })
+}
+
+
     useEffect( () => {
         customFetch(data)
         .then((product) => {
